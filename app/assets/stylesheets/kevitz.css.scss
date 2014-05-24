@@ -4,25 +4,112 @@
 
 body {
 	min-width: 760px;
+	font-family: lato;
+}
+
+input,
+button {
+	font-family: lato;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+#head {
+	margin: 30px auto;
+	width: 684px;
+
+	p {
+		font-size: 12px;
+		letter-spacing: 3px;
+	}
+}
+
+#logo {
+	display: inline-block;
+	margin: 0 30px 0 16px;
+	vertical-align: middle;
+	font-size: 60px;
+	letter-spacing: -3px;
+	font-weight: 600;
+	color: #333;
+
+	b {
+		color: #f00;
+		font-weight: 300;
+	}
 }
 
 #search-form {
-	padding: 60px 0;
-	text-align: center;
+	display: inline-block;
+	padding-top: 9px;
+	vertical-align: middle;
+	font-size: 0;
+}
+
+#sf-term {
+	margin: 0;
+	padding: 17px 28px 19px;
+	width: 170px;
+	border: none;
+	// line-height: 60px;
+	box-shadow: none;
+	background: #fafafa;
+	font-size: 20px;
+	color: #333;
+
+	&:focus {
+		width: 290px;
+		outline: none;
+	}
+
+	transition: width .2s;
+}
+
+#sf-submit {
+	margin: 0;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	border: none;
+	line-height: 60px;
+	background-color: #2c3e50;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #1c2e40;
+	}
+
+	transition: background-color .2s;
+
+	.fa-search {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
 }
 
 #grid {
 	margin: 0 auto 60px;
 	width: 684px;
+	text-align: center;
 	font-size: 0;
 }
 
 .grid-cell {
 	display: inline-block;
-	// margin: 1px;
 	width: 80px;
 	height: 80px;
 	border: 1px solid #fff;
-	background-color: #eee;
+	background-color: #fafafa;
 }
 
