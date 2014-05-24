@@ -5,16 +5,17 @@ require 'awesome_print'
 class Zazzle
 
 	HOST = 'http://www.zazzle.com/'
-	PATH = "api/create/at-%{product_id}"
+	PATH = "api/create/at-%{rf}"
+	RF = '238779073096817954'
 
-	def self.get_template_product_api(collage_url, product_id = '238779073096817954')
-		# "#{HOST}?rf=238779073096817954&ax=Linkover&pd=192869976986838675&fwd=ProductPage&ed=true&tc=&ic=&t_collage_iid=#{URI.encode collage_url}"
+	def self.get_template_product_api(collage_url)
+		# http://www.zazzle.com/api/create/at-238779073096817954?rf=238779073096817954&ax=Linkover&pd=192258280259945962&fwd=ProductPage&ed=true&tc=&ic=&t_collage_iid=
 		# ap Zazzle.get_template_product_api("http://lorempixel.com/400/400")
 		
 		params = {
 			ax: 'Linkover',
-			rf: product_id,
-			pd: '192869976986838675',
+			rf: RF,
+			pd: '192258280259945962',
 			fwd: 'ProductPage',
 			ed: true,
 			tc: '',
@@ -22,7 +23,7 @@ class Zazzle
 			t_collage_iid: URI.encode(collage_url)
 		}
 
-		path = PATH % {product_id: product_id}
+		path = PATH % {rf: RF}
 
 		"#{HOST}/#{path}?#{params.to_query}"
 	end

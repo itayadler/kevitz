@@ -13,21 +13,21 @@ $ ->
 			success: (albums) ->
 				freeCells = $('.grid-cell').not '.occupied'
 				freeCells.each (i) ->
-					coverUrl = albums[i]?.artworkUrl100
-					if coverUrl
-						$(@).css('background-image', "url(#{ coverUrl })")
-							.addClass('occupied')
-							.data('url', coverUrl)
+					thumbUrl = albums[i]?.artworkUrl100
+					coverUrl = albums[i]?.large_cover
 
+					if thumbUrl && coverUrl
+						$(@).css('background-image', "url(#{ thumbUrl })")
+							.addClass('occupied')
+							.data('coverUrl', coverUrl)
 		false
 
-
 	$('#buy').click ->
-		covers = $('.grid-cell').map -> $(@).data('url')
+		coverUrls = $('.grid-cell').map -> $(@).data('coverUrl')
 		$.ajax
 			url: '/buy'
 			method: 'post'
-			data: covers: covers.toArray()
+			data: covers: coverUrls.toArray()
 			dataType: 'json'
 			success: (response) ->
 				location.href = response.zazzleUrl
