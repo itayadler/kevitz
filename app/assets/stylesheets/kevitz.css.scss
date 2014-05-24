@@ -1,0 +1,28 @@
+// Place all the styles related to the kevitz controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	min-width: 760px;
+}
+
+#search-form {
+	padding: 60px 0;
+	text-align: center;
+}
+
+#grid {
+	margin: 0 auto 60px;
+	width: 684px;
+	font-size: 0;
+}
+
+.grid-cell {
+	display: inline-block;
+	// margin: 1px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #fff;
+	background-color: #eee;
+}
+
