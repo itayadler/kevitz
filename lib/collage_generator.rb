@@ -16,6 +16,7 @@ class CollageGenerator
   def self.generate(covers)
     #1: Download the covers
     covers_images = download_covers(covers)
+    #require 'byebug'; byebug
     #2: Stich 'em up
     image_size = image_size(covers_images[0])
     collage_size = collage_size(image_size)
@@ -75,3 +76,6 @@ class CollageGenerator
     [image.width, image.height]
   end
 end
+
+#require_relative './test'
+#CollageGenerator.generate(SHAKUR)
