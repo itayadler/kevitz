@@ -11,6 +11,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'haml-rails'
 gem 'pg'
+gem 'itunes-search-api'
+gem 'hashie'
+gem 'awesome_print'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19]
