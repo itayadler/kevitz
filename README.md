@@ -2,6 +2,6 @@
 - [ ] UI components
   - [ ] search
   - [ ] grid
-- [ ] CollageGenerator
+- [x] CollageGenerator
 - [ ] Zazzle API - hook an image with a template product
 - [x] Setup (rails)

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -14,6 +14,9 @@ gem 'pg'
 gem 'itunes-search-api'
 gem 'hashie'
 gem 'awesome_print'
+gem 'ruby-opencv'
+gem 'httparty'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19]
