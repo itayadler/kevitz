@@ -17,6 +17,7 @@ $ ->
 					if coverUrl
 						$(@).css('background-image', "url(#{ coverUrl })")
 							.addClass('occupied')
+							.data('url', coverUrl)
 
 		false
 

@@ -16,6 +16,8 @@ gem 'hashie'
 gem 'awesome_print'
 gem 'ruby-opencv'
 gem 'httparty'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development do
   gem 'better_errors'
