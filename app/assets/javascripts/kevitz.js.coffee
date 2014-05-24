@@ -20,3 +20,13 @@ $ ->
 
 		false
 
+
+	$('#buy').click ->
+		covers = $('.grid-cell').map -> $(@).data('url')
+		$.ajax
+			url: '/buy'
+			method: 'post'
+			data: covers: covers.toArray()
+			dataType: 'json'
+			success: (response) ->
+				location.href = response.zazzleUrl
