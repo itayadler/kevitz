@@ -5,6 +5,7 @@ require 'httparty'
 class CollageGenerator
   include OpenCV
   ROW_SIZE = 8
+  IMAGE_WIDTH = 600
   #Expecting an array of 64 covers.
   #[
   # 'http://a1.mzstatic.com/us/r30/Music/9a/fa/3a/mzi.xvwzoplt.600x600-75.jpg'
@@ -32,6 +33,7 @@ class CollageGenerator
         collage_image.set_roi(roi)
         cover_image_path = covers_images[image_idx]
         cover_image = IplImage.load(cover_image_path)
+        cover_image = cover_image.resize(CvSize.new(image_size[0], image_size[1]))
         cover_image.copy(collage_image)
         collage_image.reset_roi
         image_idx += 1
@@ -72,8 +74,7 @@ class CollageGenerator
   end
 
   def self.image_size(image_path)
-    image = IplImage.load(image_path)
-    [image.width, image.height]
+    [IMAGE_WIDTH, IMAGE_WIDTH]
   end
 end
 
