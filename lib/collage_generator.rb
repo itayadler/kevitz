@@ -5,6 +5,9 @@ require 'httparty'
 class CollageGenerator
   include OpenCV
   ROW_SIZE = 8
+  IMAGE_WIDTH = 600
+  MARGIN_SIZE = 1.5
+  CANVAS_SIZE = 24.0
   #Expecting an array of 64 covers.
   #[
   # 'http://a1.mzstatic.com/us/r30/Music/9a/fa/3a/mzi.xvwzoplt.600x600-75.jpg'
@@ -32,18 +35,36 @@ class CollageGenerator
         collage_image.set_roi(roi)
         cover_image_path = covers_images[image_idx]
         cover_image = IplImage.load(cover_image_path)
+        cover_image = cover_image.resize(CvSize.new(image_size[0], image_size[1]))
         cover_image.copy(collage_image)
         collage_image.reset_roi
         image_idx += 1
       end
     end
+    final_collage_size = final_collage_size(collage_size)
+    origin_x = margin_to_canvas_ratio * collage_size[0]
+    origin_y = margin_to_canvas_ratio * collage_size[1]
+    final_image = IplImage.new(final_collage_size[0], final_collage_size[1], CV_8U, 3)
+    final_image.set_roi(CvRect.new(origin_x, origin_y, collage_size[0], collage_size[1]))
+    collage_image.copy(final_image)
+    final_image.reset_roi
     #3: cleanup cover images
     covers_images.each do |cover_img|
       File.unlink(cover_img)
     end
     #4: Save and return local uri
-    path = save_collage(collage_image)
+    path = save_collage(final_image)
     path
+  end
+
+  def self.final_collage_size(collage_size)
+    width = collage_size[0] + (margin_to_canvas_ratio*collage_size[0]*2)
+    height = collage_size[1] + (margin_to_canvas_ratio*collage_size[1]*2)
+    [width, height]
+  end
+
+  def self.margin_to_canvas_ratio
+    MARGIN_SIZE/CANVAS_SIZE
   end
 
   def self.save_collage(collage_image)
@@ -72,8 +93,7 @@ class CollageGenerator
   end
 
   def self.image_size(image_path)
-    image = IplImage.load(image_path)
-    [image.width, image.height]
+    [IMAGE_WIDTH, IMAGE_WIDTH]
   end
 end
 
