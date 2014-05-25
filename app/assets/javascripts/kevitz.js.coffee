@@ -12,14 +12,20 @@ $ ->
 			data: $search.serializeArray()
 			success: (albums) ->
 				freeCells = $('.grid-cell').not '.occupied'
-				freeCells.each (i) ->
+				freeCells.each (i, cell) ->
 					thumbUrl = albums[i]?.artworkUrl100
 					coverUrl = albums[i]?.large_cover
 
 					if thumbUrl && coverUrl
-						$(@).css('background-image', "url(#{ thumbUrl })")
+						$(cell) #.css('background-image', "url(#{ thumbUrl })")
 							.addClass('occupied')
 							.data('coverUrl', coverUrl)
+
+						$thumb = $('<img>', width: 80, height: 80, class: 'grid-cell-image').on 'load', ->
+							$thumb.appendTo cell
+							setTimeout (-> $thumb.addClass 'kaka'), 100 * Math.random()
+
+						$thumb.attr 'src', thumbUrl
 		false
 
 	$('#buy').click ->

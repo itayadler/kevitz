@@ -111,5 +111,17 @@ button {
 	height: 80px;
 	border: 1px solid #fff;
 	background-color: #fafafa;
+	overflow: hidden;
 }
 
+.grid-cell-image {
+	margin-top: -80px;
+	opacity: 0;
+
+	&.kaka {
+		margin-top: 0;
+		opacity: 1;
+	}
+
+	transition: all .4s;
+}
