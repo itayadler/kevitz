@@ -23,7 +23,7 @@ $ ->
 
 						$thumb = $('<img>', width: 80, height: 80, class: 'grid-cell-image').on 'load', ->
 							$thumb.appendTo cell
-							setTimeout (-> $thumb.addClass 'kaka'), 100 * Math.random()
+							setTimeout (-> $thumb.addClass 'fall'), 300 * Math.random()
 
 						$thumb.attr 'src', thumbUrl
 		false

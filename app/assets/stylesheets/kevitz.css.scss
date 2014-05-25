@@ -18,7 +18,7 @@ button {
 
 #head {
 	margin: 30px auto;
-	width: 684px;
+	width: 720px;
 
 	p {
 		font-size: 12px;
@@ -98,6 +98,30 @@ button {
 	}
 }
 
+#buy {
+	margin: 0;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	border: none;
+	line-height: 60px;
+	background-color: #f00;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	.fa-credit-card {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
 #grid {
 	margin: 0 auto 60px;
 	width: 684px;
@@ -114,11 +138,28 @@ button {
 	overflow: hidden;
 }
 
+.grid-cell-remove {
+	margin-top: -80px;
+	width: 100%;
+	height: 100%;
+	line-height: 80px;
+	font-size: 40px;
+	color: #f00;
+	background-color: #fff;
+	cursor: pointer;
+
+	.grid-cell.occupied:hover & {
+		margin-top: 0;
+	}
+
+	transition: margin-top .2s;
+}
+
 .grid-cell-image {
 	margin-top: -80px;
 	opacity: 0;
 
-	&.kaka {
+	&.fall {
 		margin-top: 0;
 		opacity: 1;
 	}

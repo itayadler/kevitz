@@ -6,9 +6,10 @@
 	%form#search-form{method: 'get', action: ''}
 		%input#sf-term{type: 'text', name: 'term', placeholder: 'Enter artist name...'}
 		%button#sf-submit.fa.fa-search{type: 'submit'} 
+		%button#buy.fa.fa-credit-card{type: 'button'}
 		
 #grid
 	- 64.times do
 		.grid-cell
-
-%button#buy{type: 'button'} Buy!
+			.grid-cell-remove
+				%span.fa.fa-trash-o
