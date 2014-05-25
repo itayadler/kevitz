@@ -1,6 +1,4 @@
-// Place all the styles related to the kevitz controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$cell-size: 80px;
 
 body {
 	min-width: 760px;
@@ -18,7 +16,7 @@ button {
 
 #head {
 	margin: 30px auto;
-	width: 720px;
+	width: 680px;
 
 	p {
 		font-size: 12px;
@@ -43,7 +41,8 @@ button {
 
 #search-form {
 	display: inline-block;
-	padding-top: 9px;
+	float: right;
+	padding: 9px 14px 0 0;
 	vertical-align: middle;
 	font-size: 0;
 }
@@ -53,14 +52,13 @@ button {
 	padding: 17px 28px 19px;
 	width: 170px;
 	border: none;
-	// line-height: 60px;
 	box-shadow: none;
 	background: #fafafa;
 	font-size: 20px;
 	color: #333;
 
 	&:focus {
-		width: 290px;
+		width: 250px;
 		outline: none;
 	}
 
@@ -123,26 +121,27 @@ button {
 }
 
 #grid {
+	clear: both;
 	margin: 0 auto 60px;
-	width: 684px;
+	width: 680px;
 	text-align: center;
 	font-size: 0;
 }
 
 .grid-cell {
 	display: inline-block;
-	width: 80px;
-	height: 80px;
+	width: $cell-size;
+	height: $cell-size;
 	border: 1px solid #fff;
 	background-color: #fafafa;
 	overflow: hidden;
 }
 
 .grid-cell-remove {
-	margin-top: -80px;
+	margin-top: -$cell-size;
 	width: 100%;
 	height: 100%;
-	line-height: 80px;
+	line-height: $cell-size;
 	font-size: 40px;
 	color: #f00;
 	background-color: #fff;
@@ -156,7 +155,7 @@ button {
 }
 
 .grid-cell-image {
-	margin-top: -80px;
+	margin-top: -$cell-size;
 	opacity: 0;
 
 	&.fall {
