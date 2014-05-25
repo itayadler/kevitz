@@ -1,5 +1,4 @@
-class Kevitz.BuyView
-
+class Kz.BuyView
   render: ->
     $('#buy').click ->
       coverUrls = $('.grid-cell').map -> $(@).data('coverUrl')

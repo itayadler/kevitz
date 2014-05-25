@@ -1,6 +1,6 @@
-class Kevitz.HeaderView
+class Kz.HeaderView
   render: ->
-    searchView = new Kevitz.SearchView
+    searchView = new Kz.SearchView
     searchView.render()
-    buyView = new Kevitz.BuyView
+    buyView = new Kz.BuyView
     buyView.render()
