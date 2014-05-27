@@ -18,6 +18,8 @@ gem 'ruby-opencv'
 gem 'httparty'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'parallel'
+gem 'httpclient'
 
 group :development do
   gem 'better_errors'

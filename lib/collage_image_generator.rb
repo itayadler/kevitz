@@ -1,8 +1,10 @@
+require 'benchmark'
 require 'opencv'
 require 'tempfile'
 require 'httparty'
+require 'parallel'
 
-class CollageGenerator
+class CollageImageGenerator
   include OpenCV
   ROW_SIZE = 8
   IMAGE_WIDTH = 600
@@ -15,10 +17,14 @@ class CollageGenerator
   #
   #Example usage:
   #covers = 64.times.map { 'http://a1.mzstatic.com/us/r30/Music/9a/fa/3a/mzi.xvwzoplt.600x600-75.jpg' }
-  #CollageGenerator.generate(covers)
-  def self.generate(covers)
+  #CollageImageGenerator.generate(covers)
+  def self.generate(covers, &block)
     #1: Download the covers
-    covers_images = download_covers(covers)
+    covers_images = nil
+    time = Benchmark.realtime do 
+      covers_images = download_covers(covers)
+    end
+    puts "Download covers took #{time} seconds"
     #require 'byebug'; byebug
     #2: Stich 'em up
     image_size = image_size(covers_images[0])
@@ -76,7 +82,7 @@ class CollageGenerator
   end
 
   def self.download_covers(covers)
-    covers.map do |cover_url|
+    Parallel.map(covers, in_threads: 4) do |cover_url|
       cover_img = HTTParty.get(cover_url).parsed_response
       temp_cover_img = Tempfile.new(['cover', '.jpg'], encoding: 'ascii-8bit')
       temp_cover_local_path = temp_cover_img.path
@@ -98,4 +104,4 @@ class CollageGenerator
 end
 
 #require_relative './test'
-#CollageGenerator.generate(SHAKUR)
+#CollageImageGenerator.generate(SHAKUR)
