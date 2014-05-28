@@ -15,13 +15,8 @@ button {
 }
 
 #head {
-	margin: 30px auto;
-	width: 680px;
-
-	p {
-		font-size: 12px;
-		letter-spacing: 3px;
-	}
+	margin: 10px auto;
+  width: 640px;
 }
 
 #logo {
@@ -37,32 +32,42 @@ button {
 		color: #f00;
 		font-weight: 300;
 	}
+	p {
+		font-size: 12px;
+		letter-spacing: 3px;
+	}
 }
 
 #search-form {
 	display: inline-block;
-	float: right;
 	padding: 9px 14px 0 0;
 	vertical-align: middle;
 	font-size: 0;
 }
 
 #sf-term {
-	margin: 0;
-	padding: 17px 28px 19px;
-	width: 170px;
-	border: none;
-	box-shadow: none;
-	background: #fafafa;
-	font-size: 20px;
-	color: #333;
+  width: 396px;
+  height: 30px;
+  padding: 12px 28px 16px;
+  margin-right: 2px;
+  font-size: 24px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+	/*margin: 0;*/
+	/*width: 170px;*/
+	/*border: none;*/
+	/*box-shadow: none;*/
+	/*background: #fafafa;*/
+	/*font-size: 20px;*/
+	/*color: #333;*/
 
-	&:focus {
-		width: 250px;
-		outline: none;
-	}
+	/*&:focus {*/
+		/*width: 250px;*/
+		/*outline: none;*/
+	/*}*/
 
-	transition: width .2s;
+	/*transition: width .2s;*/
 }
 
 #sf-submit {
@@ -132,7 +137,7 @@ button {
 	display: inline-block;
 	width: $cell-size;
 	height: $cell-size;
-	border: 1px solid #fff;
+	outline: 1px solid #ccc;
 	background-color: #fafafa;
 	overflow: hidden;
 }
