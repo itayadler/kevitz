@@ -19,4 +19,4 @@ class Kz.CollageView
 
         $thumb.attr 'src', thumbUrl
 
-  render: ->
+  #render: ->

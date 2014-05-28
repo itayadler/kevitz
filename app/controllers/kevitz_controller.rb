@@ -14,13 +14,11 @@ class KevitzController < ApplicationController
 
 	def buy
     collage_local_path = nil
-    time = Benchmark.realtime do
-      collage_local_path = CollageImageGenerator.generate params[:covers]
+    zazzle_url = nil
+    CollageImageGenerator.create params[:covers] do |collage_local_path|
+      collage = Collage.create_from_local_image(collage_local_path)
+      zazzle_url = Zazzle.get_template_product_api collage.image.url
     end
-    puts "CollageImageGenerator took #{time} seconds"
-    collage = Collage.create_from_local_image(collage_local_path)
-    File.unlink(collage_local_path)
-		zazzle_url = Zazzle.get_template_product_api collage.image.url
 		render json: { zazzleUrl: zazzle_url }
 	end
 end
