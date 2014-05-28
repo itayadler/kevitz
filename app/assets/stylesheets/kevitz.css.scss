@@ -40,11 +40,14 @@ button {
 
 #search-form {
 	display: inline-block;
-	padding: 9px 14px 0 0;
+  padding: 9px 14px 0 0;
 	vertical-align: middle;
 	font-size: 0;
 }
 
+.tt-input {
+  vertical-align: inherit !important;
+}
 #sf-term {
   width: 396px;
   height: 30px;
