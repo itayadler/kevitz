@@ -26,20 +26,18 @@ class CollageImageGenerator
     @collage_height = @collage_height_no_margins + (@bleed_ratio * @collage_height_no_margins * 2)
   end
 
-  def self.create(covers_urls, &block)
-    self.new(covers_urls).create(&block)
+  def self.generate(covers_urls, &block)
+    self.new(covers_urls).generate(&block)
   end
 
   #Example usage:
   #covers = 64.times.map { 'http://a1.mzstatic.com/us/r30/Music/9a/fa/3a/mzi.xvwzoplt.600x600-75.jpg' }
   #CollageImageGenerator.generate(covers)
-  def create(&block)
-    #1: Download the covers
+  def generate(&block)
     time = Benchmark.realtime do 
       download_covers()
     end
     puts "Download covers took #{time} seconds"
-    #2: Stich 'em up
     stitch_images()
     save_collage()
     yield(@collage_image_path)

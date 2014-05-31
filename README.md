@@ -5,7 +5,7 @@
 - [x] CollageGenerator
 - [x] Setup (rails)
 - [x] Zazzle API - hook an image with a template product
-- [ ] Autocomplete backend
+- [x] Autocomplete backend
 - [ ] Delete cover
 - [ ] Rearrange covers
 - [ ] Setup production environment
@@ -15,4 +15,6 @@
 - [ ] Optimize Zazzle
   - [ ] Store options
   - [ ] Add more collage options
+  - [x] Add functionality to CollageImageGenerator
 - [ ] Download (preview)
+- [ ] Pow
