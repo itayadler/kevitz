@@ -47,9 +47,14 @@ button {
 	text-align: center;
 	font-size: 0;
 	overflow: hidden;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .grid-cell {
+	position: relative;
 	display: inline-block;
 	width: $cell-size;
 	height: $cell-size;
@@ -57,6 +62,58 @@ button {
 	background-color: #fafafa;
 	background-color: #aaa;
 	overflow: hidden;
+
+	&.selected {
+		z-index: 1;
+		box-shadow: 0 0 30px #000;
+
+		.grid-cell-delete {
+			font-size: 16px;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			width: 20px;
+			height: 20px;
+			line-height: 20px;
+			color: #fff;
+			background-color: #f00;
+			border-radius: 50%;
+			cursor: pointer;
+			box-shadow: 0 0 5px #000;
+
+			&:hover {
+				box-shadow: 0 0 10px #000;				
+			}
+
+			transition: box-shadow .2s;
+		}
+	}
+
+	#grid.editing &:not(.selected) {
+
+		.grid-cell-overlay {
+			background-color: rgba(0, 0, 0, .7);
+
+			&:hover {
+				background-color: transparent;
+				cursor: pointer;
+			}
+
+		}
+
+	}
+
+	transition: background-color .2s;
+}
+
+.grid-cell-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	transition: background-color .2s;
 }
 
 .grid-cell-remove {

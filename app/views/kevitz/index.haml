@@ -13,6 +13,8 @@
     - dim = 8
     - (dim * dim).times do |i|
       %li.grid-cell{ data: {row: (i / dim) + 1, col: (i % dim) + 1, sizex: 1, sizey: 1 } }
+        .grid-cell-overlay
+        .grid-cell-delete.fa.fa-times
       / .grid-cell-remove
       / %span.fa.fa-trash-o}
 

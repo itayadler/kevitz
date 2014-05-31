@@ -1,7 +1,7 @@
 class Kz.BuyView
   render: ->
     $('#buy').click ->
-      coverUrls = $('.grid-cell').map -> $(@).data('coverUrl')
+      coverUrls = $('.grid-cell img').map -> $(@).data('coverUrl')
       $.ajax
         url: '/buy'
         method: 'post'
