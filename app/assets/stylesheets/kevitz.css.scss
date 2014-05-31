@@ -134,6 +134,7 @@ button {
 	width: 680px;
 	text-align: center;
 	font-size: 0;
+	overflow: hidden;
 }
 
 .grid-cell {
@@ -142,6 +143,7 @@ button {
 	height: $cell-size;
 	outline: 1px solid #ccc;
 	background-color: #fafafa;
+	background-color: #aaa;
 	overflow: hidden;
 }
 

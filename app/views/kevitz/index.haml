@@ -1,13 +1,18 @@
 #logo 
   Kev<b>i</b>tz
   %p Pretty pretty things.
+
 #head
   %form#search-form{method: 'get', action: ''}
     %input#sf-term.typeahead{type: 'text', name: 'term', placeholder: 'Enter album name...'}
     %button#sf-submit.fa.fa-search{type: 'submit'} 
     %button#buy.fa.fa-credit-card{type: 'button'}
-#grid
-  - 64.times do
-    .grid-cell
-      .grid-cell-remove
-        %span.fa.fa-trash-o
+
+#grid.gridster
+  %ul
+    - dim = 8
+    - (dim * dim).times do |i|
+      %li.grid-cell{ data: {row: (i / dim) + 1, col: (i % dim) + 1, sizex: 1, sizey: 1 } }
+      / .grid-cell-remove
+      / %span.fa.fa-trash-o}
+
