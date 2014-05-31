@@ -51,4 +51,17 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  require 'byebug'
+
+  #set in your .powconfig
+  if ENV['RUBY_DEBUG_PORT']
+    Byebug.start_server 'localhost', ENV['RUBY_DEBUG_PORT'].to_i
+  else
+    Byebug.start_server 'localhost'
+  end
+
+
 end
+
+

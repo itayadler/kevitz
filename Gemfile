@@ -29,6 +29,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'byebug'
+  gem 'powder'
 end
 group :development, :test do
   gem 'thin'
