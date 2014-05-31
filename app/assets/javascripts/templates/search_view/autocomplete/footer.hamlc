@@ -1,0 +1,2 @@
+%p.footer-link{onclick: 'Kz.vent.trigger('typeahead:footer-clicked', "#{@query}")'}
+  Add all albums for "<a href='javascript:;'>#{@query}</a>"

@@ -20,6 +20,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'parallel'
 gem 'httpclient'
+gem 'haml_coffee_assets'
+gem 'execjs'
 
 group :development do
   gem 'better_errors'

@@ -1,0 +1,4 @@
+%img{src: "#{@thumbnailUrl}", width: 60, height: 60}
+.details
+  .album_name= @albumName
+  .artist_name= @artistName
