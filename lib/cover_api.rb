@@ -12,7 +12,7 @@ class CoverAPI
   def self.find_covers_by_artist(artist_name)
     results = ITunesSearchAPI.search(term: artist_name, country: COUNTRY, media: MUSIC_MEDIA, entity: ENTITY)
       .map { |r| Hashie::Mash.new(r) }
-      .map { |r| r.large_cover = r.artworkUrl100.gsub('100x100', '600x600'); r }
+      .map { |r| r.artworkUrl600 = r.artworkUrl100.gsub('100x100', '600x600'); r }
     results
   end
 end

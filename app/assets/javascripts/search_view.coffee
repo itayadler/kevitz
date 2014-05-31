@@ -40,19 +40,21 @@ class Kz.SearchView
         type: 'get'
         data: $search.serializeArray()
         success: (albums) ->
-          freeCells = $('.grid-cell').not '.occupied'
-          freeCells.each (i, cell) ->
-            thumbUrl = albums[i]?.artworkUrl100
-            coverUrl = albums[i]?.large_cover
+          Kz.vent.trigger('search', [albums])
 
-            if thumbUrl && coverUrl
-              $(cell) #.css('background-image', "url(#{ thumbUrl })")
-                .addClass('occupied')
-                .data('coverUrl', coverUrl)
+          # freeCells = $('.grid-cell').not '.occupied'
+          # freeCells.each (i, cell) ->
+          #   thumbUrl = albums[i]?.artworkUrl100
+          #   coverUrl = albums[i]?.large_cover
 
-              $thumb = $('<img>', width: 80, height: 80, class: 'grid-cell-image').on 'load', ->
-                $thumb.appendTo cell
-                setTimeout (-> $thumb.addClass 'fall'), 300 * Math.random()
+          #   if thumbUrl && coverUrl
+          #     $(cell) #.css('background-image', "url(#{ thumbUrl })")
+          #       .addClass('occupied')
+          #       .data('coverUrl', coverUrl)
 
-              $thumb.attr 'src', thumbUrl
+          #     $thumb = $('<img>', width: 80, height: 80, class: 'grid-cell-image').on 'load', ->
+          #       $thumb.appendTo cell
+          #       setTimeout (-> $thumb.addClass 'fall'), 300 * Math.random()
+
+          #     $thumb.attr 'src', thumbUrl
       false
