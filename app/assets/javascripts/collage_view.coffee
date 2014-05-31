@@ -6,7 +6,7 @@ class Kz.CollageView
     freeCells = $('.grid-cell').not '.occupied'
     freeCells.each (i, cell) ->
       thumbUrl = albums[i]?.artworkUrl100
-      coverUrl = albums[i]?.large_cover
+      coverUrl = albums[i]?.artworkUrl600
 
       if thumbUrl && coverUrl
         $(cell)
@@ -19,4 +19,4 @@ class Kz.CollageView
 
         $thumb.attr 'src', thumbUrl
 
-  render: ->
+  #render: ->

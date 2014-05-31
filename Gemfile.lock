@@ -82,6 +82,7 @@ GEM
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
+    httpclient (2.3.4.1)
     i18n (0.6.9)
     itunes-search-api (0.1.0)
       httparty
@@ -108,6 +109,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    parallel (1.0.0)
     pg (0.17.1)
     polyglot (0.3.4)
     quiet_assets (1.0.2)
@@ -195,10 +197,12 @@ DEPENDENCIES
   hashie
   html2haml
   httparty
+  httpclient
   itunes-search-api
   jbuilder (~> 2.0)
   jquery-rails
   paperclip
+  parallel
   pg
   quiet_assets
   rails (= 4.1.1)

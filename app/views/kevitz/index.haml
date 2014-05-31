@@ -1,15 +1,13 @@
+#logo 
+  Kev<b>i</b>tz
+  %p Pretty pretty things.
 #head
-	#logo 
-		Kev<b>i</b>tz
-		%p Make pretty things.
-
-	%form#search-form{method: 'get', action: ''}
-		%input#sf-term{type: 'text', name: 'term', placeholder: 'Enter artist name...'}
-		%button#sf-submit.fa.fa-search{type: 'submit'} 
-		%button#buy.fa.fa-credit-card{type: 'button'}
-		
+  %form#search-form{method: 'get', action: ''}
+    %input#sf-term.typeahead{type: 'text', name: 'term', placeholder: 'Enter album name...'}
+    %button#sf-submit.fa.fa-search{type: 'submit'} 
+    %button#buy.fa.fa-credit-card{type: 'button'}
 #grid
-	- 64.times do
-		.grid-cell
-			.grid-cell-remove
-				%span.fa.fa-trash-o
+  - 64.times do
+    .grid-cell
+      .grid-cell-remove
+        %span.fa.fa-trash-o

@@ -10,4 +10,11 @@ class Collage < ActiveRecord::Base
       secret_access_key: ENV['S3_SECRET_ACCESS_KEY']
     }
   end
+
+  def self.create_from_local_image(local_file_path)
+		file = File.open local_file_path
+		collage = Collage.create image: file
+		file.close
+    collage
+  end
 end
