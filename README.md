@@ -6,8 +6,8 @@
 - [x] Setup (rails)
 - [x] Zazzle API - hook an image with a template product
 - [x] Autocomplete backend
-- [ ] Delete cover
-- [ ] Rearrange covers
+- [x] Delete cover
+- [x] Rearrange covers
 - [ ] Setup production environment
 - [ ] iTunes cover duplicates.
 - [ ] Collage bleed
@@ -17,4 +17,4 @@
   - [ ] Add more collage options
   - [x] Add functionality to CollageImageGenerator
 - [ ] Download (preview)
-- [ ] Pow
+- [x] Pow
