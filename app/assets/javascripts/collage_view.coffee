@@ -19,7 +19,7 @@ class Kz.CollageView
         $grid.toggleClass 'editing', $clicked.is '.selected'
 
     $('.grid-cell-delete').click (e) =>
-      $(e.currentTarget).closest('.grid-cell').find('img').remove()
+      $(e.currentTarget).closest('.grid-cell').removeClass('occupied').find('img').remove()
 
   render: ->
     # $('#grid ul').gridster

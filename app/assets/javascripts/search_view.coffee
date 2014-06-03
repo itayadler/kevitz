@@ -9,10 +9,10 @@ class Kz.SearchView
     covers = new Bloodhound(
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value')
       queryTokenizer: Bloodhound.tokenizers.whitespace
-      limit: 20
+      limit: 64
       remote: 
         rateLimitWait: 100
-        url: 'https://itunes.apple.com/search?term=%QUERY&entity=album&media=music&country=us'
+        url: 'https://itunes.apple.com/search?term=%QUERY&entity=album&media=music&country=us&limit=64'
         filter: (parsedResponse) => @filterResults(parsedResponse)
         ajax:
           dataType: 'jsonp'
@@ -34,6 +34,7 @@ class Kz.SearchView
     Kz.vent.on('typeahead:footer-clicked', (e, query)->
       covers.get(query, (result)->
         Kz.vent.trigger('search', [_.pluck(result, 'data')])
+        $('.typeahead').typeahead 'destroy'
       )
     )
 
