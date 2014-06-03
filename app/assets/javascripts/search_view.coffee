@@ -18,7 +18,6 @@ class Kz.SearchView
           dataType: 'jsonp'
     )
     covers.initialize()
-    console.log covers.ttAdapter.toString()
     $('.typeahead').typeahead null,
       name: 'covers'
       source: (query, render)=>

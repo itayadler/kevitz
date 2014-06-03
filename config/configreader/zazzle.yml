@@ -1,0 +1,17 @@
+store_id: "238779073096817954" 
+products:
+  228099768686895112:
+    type: "poster"
+    width: 40
+    height: 40
+    margin: 0
+  228263665573408984:
+    type: "poster"
+    width: 24
+    height: 24
+    margin: 0
+  192258280259945962:
+    type: "canvas"
+    width: 24
+    height: 24
+    margin: 1.5

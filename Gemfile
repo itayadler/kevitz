@@ -22,6 +22,7 @@ gem 'parallel'
 gem 'httpclient'
 gem 'haml_coffee_assets'
 gem 'execjs'
+gem 'configreader'
 
 group :development do
   gem 'better_errors'
